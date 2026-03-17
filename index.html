@@ -603,25 +603,7 @@ function openTab(evt, id){
 }
 </script>
 
-<script>
-  // Generate random math question
-  let num1 = Math.floor(Math.random() * 10) + 1;
-  let num2 = Math.floor(Math.random() * 10) + 1;
-  let correctAnswer = num1 + num2;
 
-  document.getElementById("mathQuestion").innerText =
-    `What is ${num1} + ${num2}?`;
-
-  document.querySelector(".enquiry-form").addEventListener("submit", function(e) {
-    let isChecked = document.getElementById("humanCheck").checked;
-    let userAnswer = document.getElementById("mathAnswer").value;
-
-    if (!isChecked || userAnswer != correctAnswer) {
-      e.preventDefault();
-      document.getElementById("errorMsg").style.display = "block";
-    }
-  });
-</script>
 
 
 <script>
