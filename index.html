@@ -494,65 +494,68 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
 </div>
 
 <!-- ENROLL -->
-<section class="enquiry-section">
-<div class="enquiry-container">
+<div class="container">
 
-<!-- LEFT SIDE -->
-<div class="enquiry-left">
-  <h2>Enquire About This Course</h2>
-  <p>Talk to our advisor & get full details.</p>
+<!-- LEFT -->
+<div class="left">
+  <h2>Enquire About Course</h2>
+  <p>Get details, demo & career support.</p>
 
   <ul>
-    <li>✔ Free Demo Session</li>
-    <li>✔ Course Curriculum</li>
+    <li>✔ Free Demo</li>
+    <li>✔ Course Details</li>
     <li>✔ Career Guidance</li>
-    <li>✔ WhatsApp Support</li>
   </ul>
 </div>
 
-<!-- RIGHT FORM -->
-<form id="enquiryForm"
+<!-- FORM -->
+<form id="form"
 action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
 method="POST"
 target="hidden_iframe"
-class="enquiry-form">
+class="form-box">
 
 <input type="text" name="entry.1795851255" placeholder="Full Name" required>
 
-<input type="email" name="entry.1572640658" placeholder="Email Address" required>
+<input type="email" name="entry.1572640658" placeholder="Email" required>
 
-<input type="tel" name="entry.85357022" placeholder="Phone Number" required>
+<input type="tel" name="entry.85357022" placeholder="Phone" required>
 
-<select name="entry.1768586726" required>
-<option value="">Select Country</option>
+<!-- extra fields -->
+<input type="tel" name="entry.1537635821" placeholder="WhatsApp Number">
+
+<input type="text" name="entry.896692678" placeholder="Course (eg: AIML)">
+
+<select name="entry.1768586726">
+<option value="">Country</option>
 <option value="USA">USA</option>
 <option value="India">India</option>
-<option value="UK">UK</option>
 </select>
 
-<textarea name="entry.996980086" placeholder="Your Message"></textarea>
+<input type="text" name="entry.1968396756" placeholder="City">
+
+<textarea name="entry.996980086" placeholder="Message"></textarea>
 
 <!-- HUMAN CHECK -->
 <label>
-<input type="checkbox" id="humanCheck"> I am not a robot
+<input type="checkbox" id="check"> I am not robot
 </label>
 
-<p id="mathQuestion"></p>
-<input type="number" id="mathAnswer" placeholder="Your Answer">
+<p id="q"></p>
+<input type="number" id="ans" placeholder="Answer">
 
-<p id="errorMsg">Please verify you are human</p>
+<p id="errorMsg">Please verify correctly</p>
 
-<button type="submit">Submit Enquiry</button>
+<button type="submit">Submit</button>
 
 </form>
 
 <!-- hidden iframe -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<iframe name="hidden_iframe" id="iframe" style="display:none;"></iframe>
 
-<p id="successMsg">✅ Thank you! Your enquiry has been submitted.</p>
+<p id="successMsg">✅ Submitted Successfully!</p>
 
 </div>
-</section>
 <footer class="site-footer">
   <div class="footer-container">
     <p>© 2026 Hachion Salesforce Admin Course. All Rights Reserved.</p>
