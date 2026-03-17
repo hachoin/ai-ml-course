@@ -515,35 +515,47 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
 </div>
 
 <!-- RIGHT FORM -->
-<form id="enquiryForm" class="enquiry-form">
+<form id="enquiryForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
+method="POST"
+target="hidden_iframe"
+class="enquiry-form">
 
-<input type="text" id="name" placeholder="Full Name" required>
-<input type="email" id="email" placeholder="Email" required>
-<input type="tel" id="phone" placeholder="Phone" required>
+<input type="text" name="entry.1795851255" placeholder="Full Name" required>
 
-<select id="country" required>
+<input type="email" name="entry.1572640658" placeholder="Email Address" required>
+
+<input type="tel" name="entry.85357022" placeholder="Phone Number" required>
+
+<select name="entry.1768586726" required>
 <option value="">Select Country</option>
 <option>USA</option>
 <option>India</option>
+<option>UK</option>
 </select>
 
-<textarea id="message" placeholder="Message"></textarea>
+<textarea name="entry.996980086" placeholder="Message"></textarea>
 
 <!-- HUMAN CHECK -->
 <label>
-<input type="checkbox" id="humanCheck"> I am not robot
+<input type="checkbox" id="humanCheck"> I am not a robot
 </label>
 
 <p id="mathQuestion"></p>
 <input type="number" id="mathAnswer" placeholder="Answer">
 
-<p id="errorMsg">Please verify</p>
+<p id="errorMsg" style="display:none;color:red;">Please verify</p>
 
 <button type="submit">Submit</button>
 
-<p id="successMsg">✅ Submitted Successfully</p>
-
 </form>
+
+<!-- Hidden iframe -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<p id="successMsg" style="display:none;color:green;">
+✅ Submitted Successfully!
+</p>
 
 </div>
 <footer class="site-footer">
