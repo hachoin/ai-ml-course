@@ -503,8 +503,7 @@ target="hidden_iframe">
 
 
 <script src="app.js"></script>
-
-	<script>
+<script>
 document.addEventListener("DOMContentLoaded", function(){
 
 let form = document.getElementById("enquiryForm");
@@ -520,21 +519,23 @@ phone.addEventListener("input", function(){
   whatsapp.value = phone.value;
 });
 
+// detect submit
 form.addEventListener("submit", function(){
   submitted = true;
 });
 
-// success detect
+// show thank you (NO page open)
 iframe.onload = function(){
   if(submitted){
-    document.getElementById("successMsg").style.display="block";
-    form.reset();
-    submitted=false;
+    document.getElementById("successMsg").style.display = "block";
+    form.style.display = "none"; // optional: hide form
+    submitted = false;
   }
 };
 
 });
 </script>
+
 </body>
 <script src="script.js"></script>
 
