@@ -13,6 +13,86 @@
 
 
 <link rel="stylesheet" href="style.css">
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+}
+
+/* SECTION */
+.enquiry-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    padding: 50px 20px;
+    color: white;
+}
+
+/* LEFT */
+.enquiry-left {
+    flex: 1;
+}
+
+.enquiry-left h2 {
+    font-size: 32px;
+}
+
+.enquiry-left p {
+    color: #cbd5f5;
+}
+
+.enquiry-points {
+    margin-top: 20px;
+    line-height: 2;
+}
+
+/* FORM */
+.enquiry-form {
+    flex: 1;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #38bdf8;
+    border: none;
+    cursor: pointer;
+}
+
+/* Messages */
+#errorMsg {
+    display: none;
+    color: red;
+}
+
+#successMsg {
+    display: none;
+    color: lightgreen;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .enquiry-container {
+        flex-direction: column;
+    }
+}
+</style>
+
 </head>
 	<body id="top">
 
@@ -420,67 +500,52 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
 </div>
 
 <!-- ENROLL -->
-<section id="enroll" class="enquiry-section">
-  <div class="enquiry-container">
+<div class="enquiry-container">
 
-    <!-- LEFT SIDE -->
-    <div class="enquiry-left">
-      <h2>Enquire About This Course</h2>
-      <p>Talk to our course advisor. Get syllabus, demo details, fee structure and career guidance.</p>
+<!-- LEFT -->
+<div class="enquiry-left">
+<h2>Enquire About This Course</h2>
+<p>Get syllabus, demo & career guidance.</p>
 
-      <ul class="enquiry-points">
-        <li>✔ Free Demo Session</li>
-        <li>✔ Curriculum & Fee Details</li>
-        <li>✔ Career Guidance</li>
-        <li>✔ WhatsApp Support</li>
-      </ul>
-    </div>
+<ul class="enquiry-points">
+<li>✔ Free Demo</li>
+<li>✔ Course Details</li>
+<li>✔ Career Support</li>
+</ul>
+</div>
 
-    <!-- RIGHT SIDE FORM -->
-    <form id="enquiryForm" class="enquiry-form">
+<!-- RIGHT FORM -->
+<form id="enquiryForm" class="enquiry-form">
 
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <input type="tel" id="phone" placeholder="Phone / WhatsApp Number" required>
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="tel" id="phone" placeholder="Phone" required>
 
-      <select id="country" required>
-        <option value="">Select Country</option>
-        <option>United States</option>
-        <option>Canada</option>
-        <option>United Kingdom</option>
-        <option>Australia</option>
-        <option>India</option>
-        <option>Germany</option>
-        <option>UAE</option>
-        <option>Singapore</option>
-        <option>Other</option>
-      </select>
+<select id="country" required>
+<option value="">Select Country</option>
+<option>USA</option>
+<option>India</option>
+</select>
 
-      <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+<textarea id="message" placeholder="Message"></textarea>
 
-      <!-- HUMAN CHECK -->
-      <div class="human-check">
-        <label>
-          <input type="checkbox" id="humanCheck">
-          I am not a robot
-        </label>
+<!-- HUMAN CHECK -->
+<label>
+<input type="checkbox" id="humanCheck"> I am not robot
+</label>
 
-        <div class="math-verify">
-          <span id="mathQuestion"></span>
-          <input type="number" id="mathAnswer" placeholder="Your Answer">
-        </div>
+<p id="mathQuestion"></p>
+<input type="number" id="mathAnswer" placeholder="Answer">
 
-        <p id="errorMsg">Please verify you are human.</p>
-      </div>
+<p id="errorMsg">Please verify</p>
 
-      <button type="submit">Submit Enquiry</button>
+<button type="submit">Submit</button>
 
-      <p id="successMsg">✅ Thank you! We will contact you soon.</p>
+<p id="successMsg">✅ Submitted Successfully</p>
 
-    </form>
+</form>
 
-  </div>
-</section>
+</div>
 <footer class="site-footer">
   <div class="footer-container">
     <p>© 2026 Hachion Salesforce Admin Course. All Rights Reserved.</p>
@@ -496,7 +561,52 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
 
 
 <script src="app.js"></script>
-	<script src="script.js"></script>
+<script>
+// SAFE LOAD
+document.addEventListener("DOMContentLoaded", function () {
+
+const form = document.getElementById("enquiryForm");
+
+// math
+let num1 = Math.floor(Math.random()*10);
+let num2 = Math.floor(Math.random()*10);
+document.getElementById("mathQuestion").innerText = num1 + " + " + num2 + " = ?";
+
+form.addEventListener("submit", function(e){
+e.preventDefault();
+
+// check
+let check = document.getElementById("humanCheck").checked;
+let ans = document.getElementById("mathAnswer").value;
+
+if(!check || parseInt(ans) !== (num1 + num2)){
+document.getElementById("errorMsg").style.display="block";
+return;
+}
+
+document.getElementById("errorMsg").style.display="none";
+
+// GOOGLE FORM SUBMIT
+fetch("https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse", {
+method: "POST",
+mode: "no-cors",
+body: new URLSearchParams({
+"entry.1572640658": document.getElementById("email").value,
+"entry.1795851255": document.getElementById("name").value,
+"entry.85357022": document.getElementById("phone").value,
+"entry.1768586726": document.getElementById("country").value,
+"entry.996980086": document.getElementById("message").value
+})
+});
+
+// success
+form.reset();
+document.getElementById("successMsg").style.display="block";
+
+});
+
+});
+</script>
 </body>
 <script src="script.js"></script>
 
