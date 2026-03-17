@@ -15,81 +15,89 @@
 <link rel="stylesheet" href="style.css">
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #0f172a;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
 }
 
 /* SECTION */
+.enquiry-section {
+  padding: 60px 20px;
+}
+
 .enquiry-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    gap: 40px;
-    padding: 50px 20px;
-    color: white;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
 /* LEFT */
 .enquiry-left {
-    flex: 1;
+  width: 50%;
+  color: white;
 }
 
 .enquiry-left h2 {
-    font-size: 32px;
+  font-size: 30px;
 }
 
 .enquiry-left p {
-    color: #cbd5f5;
+  color: #cbd5f5;
 }
 
-.enquiry-points {
-    margin-top: 20px;
-    line-height: 2;
+.enquiry-left ul {
+  margin-top: 20px;
+  line-height: 2;
 }
 
-/* FORM */
+/* RIGHT FORM */
 .enquiry-form {
-    flex: 1;
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 10px;
+  width: 50%;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .enquiry-form input,
 .enquiry-form select,
 .enquiry-form textarea {
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background: #38bdf8;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  cursor: pointer;
 }
 
-/* Messages */
+/* MESSAGES */
 #errorMsg {
-    display: none;
-    color: red;
+  display: none;
+  color: red;
 }
 
 #successMsg {
-    display: none;
-    color: lightgreen;
+  display: none;
+  color: lightgreen;
+  margin-top: 15px;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
-    .enquiry-container {
-        flex-direction: column;
-    }
+  .enquiry-container {
+    flex-direction: column;
+  }
+  .enquiry-left, .enquiry-form {
+    width: 100%;
+  }
 }
 </style>
 
