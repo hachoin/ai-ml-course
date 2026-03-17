@@ -493,6 +493,39 @@ class="enquiry-form">
 
 
 <script src="app.js"></script>
+
+	<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+let form = document.getElementById("enquiryForm");
+let iframe = document.getElementById("hidden_iframe");
+
+let phone = document.getElementById("phone");
+let whatsapp = document.getElementById("whatsapp");
+
+let submitted = false;
+
+// auto copy phone → whatsapp
+phone.addEventListener("input", function(){
+  whatsapp.value = phone.value;
+});
+
+// detect submit
+form.addEventListener("submit", function(){
+  submitted = true;
+});
+
+// show success message after real submit
+iframe.onload = function(){
+  if(submitted){
+    document.getElementById("successMsg").style.display = "block";
+    form.reset();
+    submitted = false;
+  }
+};
+
+});
+</script>
 </body>
 <script src="script.js"></script>
 
