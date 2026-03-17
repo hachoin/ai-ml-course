@@ -423,6 +423,7 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
 <section id="enroll" class="enquiry-section">
   <div class="enquiry-container">
 
+    <!-- LEFT SIDE -->
     <div class="enquiry-left">
       <h2>Enquire About This Course</h2>
       <p>Talk to our course advisor. Get syllabus, demo details, fee structure and career guidance.</p>
@@ -435,12 +436,14 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
       </ul>
     </div>
 
-    <form action="https://formspree.io/f/xdalodnq" method="POST" class="enquiry-form">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required>
+    <!-- RIGHT SIDE FORM -->
+    <form id="enquiryForm" class="enquiry-form">
 
-      <select name="country" required>
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="tel" id="phone" placeholder="Phone / WhatsApp Number" required>
+
+      <select id="country" required>
         <option value="">Select Country</option>
         <option>United States</option>
         <option>Canada</option>
@@ -453,26 +456,27 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
         <option>Other</option>
       </select>
 
-      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+      <textarea id="message" rows="4" placeholder="Your Message"></textarea>
 
-		   <div class="human-check">
-  <label>
-    <input type="checkbox" id="humanCheck">
-    I am not a robot
-  </label>
+      <!-- HUMAN CHECK -->
+      <div class="human-check">
+        <label>
+          <input type="checkbox" id="humanCheck">
+          I am not a robot
+        </label>
 
-  <div class="math-verify">
-    <span id="mathQuestion"></span>
-    <input type="number" id="mathAnswer" placeholder="Your Answer">
-  </div>
+        <div class="math-verify">
+          <span id="mathQuestion"></span>
+          <input type="number" id="mathAnswer" placeholder="Your Answer">
+        </div>
 
-  <p id="errorMsg" style="color:red; display:none;">Please verify you are human.</p>
-</div>
+        <p id="errorMsg">Please verify you are human.</p>
+      </div>
 
+      <button type="submit">Submit Enquiry</button>
 
-    <button type="submit">Submit Enquiry</button>
+      <p id="successMsg">✅ Thank you! We will contact you soon.</p>
 
-     
     </form>
 
   </div>
