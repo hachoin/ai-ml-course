@@ -16,58 +16,45 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #0f172a;
 }
 
-/* SECTION */
-.enquiry-section {
-  padding: 60px 20px;
-}
-
-.enquiry-container {
+/* LAYOUT */
+.container {
   max-width: 1100px;
   margin: auto;
   display: flex;
   gap: 40px;
-  align-items: center;
+  padding: 60px 20px;
 }
 
 /* LEFT */
-.enquiry-left {
+.left {
   width: 50%;
   color: white;
 }
 
-.enquiry-left h2 {
+.left h2 {
   font-size: 30px;
 }
 
-.enquiry-left p {
-  color: #cbd5f5;
-}
-
-.enquiry-left ul {
-  margin-top: 20px;
-  line-height: 2;
-}
-
-/* RIGHT FORM */
-.enquiry-form {
+/* FORM */
+.form-box {
   width: 50%;
   background: #1e293b;
   padding: 25px;
   border-radius: 10px;
 }
 
-.enquiry-form input,
-.enquiry-form select,
-.enquiry-form textarea {
+.form-box input,
+.form-box select,
+.form-box textarea {
   width: 100%;
-  margin-bottom: 12px;
   padding: 10px;
-  border-radius: 5px;
+  margin-bottom: 12px;
   border: none;
+  border-radius: 5px;
 }
 
 button {
@@ -78,25 +65,24 @@ button {
   cursor: pointer;
 }
 
-/* MESSAGES */
 #errorMsg {
-  display: none;
   color: red;
+  display: none;
 }
 
 #successMsg {
-  display: none;
   color: lightgreen;
-  margin-top: 15px;
+  display: none;
+  margin-top: 10px;
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .enquiry-container {
+@media(max-width:768px){
+  .container{
     flex-direction: column;
   }
-  .enquiry-left, .enquiry-form {
-    width: 100%;
+  .left, .form-box{
+    width:100%;
   }
 }
 </style>
