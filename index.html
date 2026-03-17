@@ -571,47 +571,68 @@ class="form-box">
 
 
 <script src="app.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
+<div class="container">
 
-let form = document.getElementById("enquiryForm");
-let iframe = document.getElementById("hidden_iframe");
+<!-- LEFT -->
+<div class="left">
+  <h2>Enquire About Course</h2>
+  <p>Get details, demo & career support.</p>
 
-// generate math question
-let n1 = Math.floor(Math.random()*10);
-let n2 = Math.floor(Math.random()*10);
-document.getElementById("mathQuestion").innerText = "Solve: " + n1 + " + " + n2;
+  <ul>
+    <li>✔ Free Demo</li>
+    <li>✔ Course Details</li>
+    <li>✔ Career Guidance</li>
+  </ul>
+</div>
 
-let isSubmitted = false;
+<!-- FORM -->
+<form id="form"
+action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
+method="POST"
+target="hidden_iframe"
+class="form-box">
 
-// validate before submit
-form.addEventListener("submit", function(e){
+<input type="text" name="entry.1795851255" placeholder="Full Name" required>
 
-let check = document.getElementById("humanCheck").checked;
-let ans = document.getElementById("mathAnswer").value;
+<input type="email" name="entry.1572640658" placeholder="Email" required>
 
-if(!check || parseInt(ans) !== (n1+n2)){
-  e.preventDefault();
-  document.getElementById("errorMsg").style.display = "block";
-  return;
-}
+<input type="tel" name="entry.85357022" placeholder="Phone" required>
 
-document.getElementById("errorMsg").style.display = "none";
-isSubmitted = true;
+<!-- extra fields -->
+<input type="tel" name="entry.1537635821" placeholder="WhatsApp Number">
 
-});
+<input type="text" name="entry.896692678" placeholder="Course (eg: AIML)">
 
-// detect successful submission
-iframe.onload = function(){
-  if(isSubmitted){
-    document.getElementById("successMsg").style.display = "block";
-    form.reset();
-    isSubmitted = false;
-  }
-};
+<select name="entry.1768586726">
+<option value="">Country</option>
+<option value="USA">USA</option>
+<option value="India">India</option>
+</select>
 
-});
-</script>
+<input type="text" name="entry.1968396756" placeholder="City">
+
+<textarea name="entry.996980086" placeholder="Message"></textarea>
+
+<!-- HUMAN CHECK -->
+<label>
+<input type="checkbox" id="check"> I am not robot
+</label>
+
+<p id="q"></p>
+<input type="number" id="ans" placeholder="Answer">
+
+<p id="errorMsg">Please verify correctly</p>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<!-- hidden iframe -->
+<iframe name="hidden_iframe" id="iframe" style="display:none;"></iframe>
+
+<p id="successMsg">✅ Submitted Successfully!</p>
+
+</div>
 </body>
 <script src="script.js"></script>
 
