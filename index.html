@@ -577,32 +577,40 @@ class="enquiry-form">
 document.addEventListener("DOMContentLoaded", function(){
 
 let form = document.getElementById("enquiryForm");
+let iframe = document.getElementById("hidden_iframe");
 
-// math
+// generate math question
 let n1 = Math.floor(Math.random()*10);
 let n2 = Math.floor(Math.random()*10);
-document.getElementById("mathQuestion").innerText = n1 + " + " + n2;
+document.getElementById("mathQuestion").innerText = "Solve: " + n1 + " + " + n2;
 
+let isSubmitted = false;
+
+// validate before submit
 form.addEventListener("submit", function(e){
 
 let check = document.getElementById("humanCheck").checked;
 let ans = document.getElementById("mathAnswer").value;
 
 if(!check || parseInt(ans) !== (n1+n2)){
-e.preventDefault();
-document.getElementById("errorMsg").style.display="block";
-return;
+  e.preventDefault();
+  document.getElementById("errorMsg").style.display = "block";
+  return;
 }
 
-document.getElementById("errorMsg").style.display="none";
-
-// show success after submit
-setTimeout(() => {
-document.getElementById("successMsg").style.display="block";
-form.reset();
-}, 1000);
+document.getElementById("errorMsg").style.display = "none";
+isSubmitted = true;
 
 });
+
+// detect successful submission
+iframe.onload = function(){
+  if(isSubmitted){
+    document.getElementById("successMsg").style.display = "block";
+    form.reset();
+    isSubmitted = false;
+  }
+};
 
 });
 </script>
