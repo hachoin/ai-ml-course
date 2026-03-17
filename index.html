@@ -574,46 +574,33 @@ class="enquiry-form">
 
 <script src="app.js"></script>
 <script>
-// SAFE LOAD
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
-const form = document.getElementById("enquiryForm");
+let form = document.getElementById("enquiryForm");
 
 // math
-let num1 = Math.floor(Math.random()*10);
-let num2 = Math.floor(Math.random()*10);
-document.getElementById("mathQuestion").innerText = num1 + " + " + num2 + " = ?";
+let n1 = Math.floor(Math.random()*10);
+let n2 = Math.floor(Math.random()*10);
+document.getElementById("mathQuestion").innerText = n1 + " + " + n2;
 
 form.addEventListener("submit", function(e){
-e.preventDefault();
 
-// check
 let check = document.getElementById("humanCheck").checked;
 let ans = document.getElementById("mathAnswer").value;
 
-if(!check || parseInt(ans) !== (num1 + num2)){
+if(!check || parseInt(ans) !== (n1+n2)){
+e.preventDefault();
 document.getElementById("errorMsg").style.display="block";
 return;
 }
 
 document.getElementById("errorMsg").style.display="none";
 
-// GOOGLE FORM SUBMIT
-fetch("https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse", {
-method: "POST",
-mode: "no-cors",
-body: new URLSearchParams({
-"entry.1572640658": document.getElementById("email").value,
-"entry.1795851255": document.getElementById("name").value,
-"entry.85357022": document.getElementById("phone").value,
-"entry.1768586726": document.getElementById("country").value,
-"entry.996980086": document.getElementById("message").value
-})
-});
-
-// success
-form.reset();
+// show success after submit
+setTimeout(() => {
 document.getElementById("successMsg").style.display="block";
+form.reset();
+}, 1000);
 
 });
 
@@ -686,25 +673,7 @@ function openTab(evt, id){
 }
 </script>
 
-<script>
-  // Generate random math question
-  let num1 = Math.floor(Math.random() * 10) + 1;
-  let num2 = Math.floor(Math.random() * 10) + 1;
-  let correctAnswer = num1 + num2;
 
-  document.getElementById("mathQuestion").innerText =
-    `What is ${num1} + ${num2}?`;
-
-  document.querySelector(".enquiry-form").addEventListener("submit", function(e) {
-    let isChecked = document.getElementById("humanCheck").checked;
-    let userAnswer = document.getElementById("mathAnswer").value;
-
-    if (!isChecked || userAnswer != correctAnswer) {
-      e.preventDefault();
-      document.getElementById("errorMsg").style.display = "block";
-    }
-  });
-</script>
 
 
 <script>
