@@ -13,79 +13,6 @@
 
 
 <link rel="stylesheet" href="style.css">
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-}
-
-/* LAYOUT */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  gap: 40px;
-  padding: 60px 20px;
-}
-
-/* LEFT */
-.left {
-  width: 50%;
-  color: white;
-}
-
-.left h2 {
-  font-size: 30px;
-}
-
-/* FORM */
-.form-box {
-  width: 50%;
-  background: #1e293b;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-.form-box input,
-.form-box select,
-.form-box textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border: none;
-  border-radius: 5px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background: #38bdf8;
-  border: none;
-  cursor: pointer;
-}
-
-#errorMsg {
-  color: red;
-  display: none;
-}
-
-#successMsg {
-  color: lightgreen;
-  display: none;
-  margin-top: 10px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .container{
-    flex-direction: column;
-  }
-  .left, .form-box{
-    width:100%;
-  }
-}
-</style>
 
 </head>
 	<body id="top">
@@ -494,68 +421,63 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
 </div>
 
 <!-- ENROLL -->
-<div class="container">
+<section id="enroll" class="enquiry-section">
+  <div class="enquiry-container">
 
-<!-- LEFT -->
-<div class="left">
-  <h2>Enquire About Course</h2>
-  <p>Get details, demo & career support.</p>
+    <div class="enquiry-left">
+      <h2>Enquire About This Course</h2>
+      <p>Talk to our course advisor. Get syllabus, demo details, fee structure and career guidance.</p>
 
-  <ul>
-    <li>✔ Free Demo</li>
-    <li>✔ Course Details</li>
-    <li>✔ Career Guidance</li>
-  </ul>
+      <ul class="enquiry-points">
+        <li>✔ Free Demo Session</li>
+        <li>✔ Curriculum & Fee Details</li>
+        <li>✔ Career Guidance</li>
+        <li>✔ WhatsApp Support</li>
+      </ul>
+    </div>
+
+    <form action="https://formspree.io/f/xdalodnq" method="POST" class="enquiry-form">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required>
+
+      <select name="country" required>
+        <option value="">Select Country</option>
+        <option>United States</option>
+        <option>Canada</option>
+        <option>United Kingdom</option>
+        <option>Australia</option>
+        <option>India</option>
+        <option>Germany</option>
+        <option>UAE</option>
+        <option>Singapore</option>
+        <option>Other</option>
+      </select>
+
+      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+
+		   <div class="human-check">
+  <label>
+    <input type="checkbox" id="humanCheck">
+    I am not a robot
+  </label>
+
+  <div class="math-verify">
+    <span id="mathQuestion"></span>
+    <input type="number" id="mathAnswer" placeholder="Your Answer">
+  </div>
+
+  <p id="errorMsg" style="color:red; display:none;">Please verify you are human.</p>
 </div>
 
-<!-- FORM -->
-<form id="form"
-action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
-method="POST"
-target="hidden_iframe"
-class="form-box">
 
-<input type="text" name="entry.1795851255" placeholder="Full Name" required>
+    <button type="submit">Submit Enquiry</button>
 
-<input type="email" name="entry.1572640658" placeholder="Email" required>
+     
+    </form>
 
-<input type="tel" name="entry.85357022" placeholder="Phone" required>
-
-<!-- extra fields -->
-<input type="tel" name="entry.1537635821" placeholder="WhatsApp Number">
-
-<input type="text" name="entry.896692678" placeholder="Course (eg: AIML)">
-
-<select name="entry.1768586726">
-<option value="">Country</option>
-<option value="USA">USA</option>
-<option value="India">India</option>
-</select>
-
-<input type="text" name="entry.1968396756" placeholder="City">
-
-<textarea name="entry.996980086" placeholder="Message"></textarea>
-
-<!-- HUMAN CHECK -->
-<label>
-<input type="checkbox" id="check"> I am not robot
-</label>
-
-<p id="q"></p>
-<input type="number" id="ans" placeholder="Answer">
-
-<p id="errorMsg">Please verify correctly</p>
-
-<button type="submit">Submit</button>
-
-</form>
-
-<!-- hidden iframe -->
-<iframe name="hidden_iframe" id="iframe" style="display:none;"></iframe>
-
-<p id="successMsg">✅ Submitted Successfully!</p>
-
-</div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="footer-container">
     <p>© 2026 Hachion Salesforce Admin Course. All Rights Reserved.</p>
@@ -571,68 +493,6 @@ class="form-box">
 
 
 <script src="app.js"></script>
-<div class="container">
-
-<!-- LEFT -->
-<div class="left">
-  <h2>Enquire About Course</h2>
-  <p>Get details, demo & career support.</p>
-
-  <ul>
-    <li>✔ Free Demo</li>
-    <li>✔ Course Details</li>
-    <li>✔ Career Guidance</li>
-  </ul>
-</div>
-
-<!-- FORM -->
-<form id="form"
-action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
-method="POST"
-target="hidden_iframe"
-class="form-box">
-
-<input type="text" name="entry.1795851255" placeholder="Full Name" required>
-
-<input type="email" name="entry.1572640658" placeholder="Email" required>
-
-<input type="tel" name="entry.85357022" placeholder="Phone" required>
-
-<!-- extra fields -->
-<input type="tel" name="entry.1537635821" placeholder="WhatsApp Number">
-
-<input type="text" name="entry.896692678" placeholder="Course (eg: AIML)">
-
-<select name="entry.1768586726">
-<option value="">Country</option>
-<option value="USA">USA</option>
-<option value="India">India</option>
-</select>
-
-<input type="text" name="entry.1968396756" placeholder="City">
-
-<textarea name="entry.996980086" placeholder="Message"></textarea>
-
-<!-- HUMAN CHECK -->
-<label>
-<input type="checkbox" id="check"> I am not robot
-</label>
-
-<p id="q"></p>
-<input type="number" id="ans" placeholder="Answer">
-
-<p id="errorMsg">Please verify correctly</p>
-
-<button type="submit">Submit</button>
-
-</form>
-
-<!-- hidden iframe -->
-<iframe name="hidden_iframe" id="iframe" style="display:none;"></iframe>
-
-<p id="successMsg">✅ Submitted Successfully!</p>
-
-</div>
 </body>
 <script src="script.js"></script>
 
@@ -700,7 +560,25 @@ function openTab(evt, id){
 }
 </script>
 
+<script>
+  // Generate random math question
+  let num1 = Math.floor(Math.random() * 10) + 1;
+  let num2 = Math.floor(Math.random() * 10) + 1;
+  let correctAnswer = num1 + num2;
 
+  document.getElementById("mathQuestion").innerText =
+    `What is ${num1} + ${num2}?`;
+
+  document.querySelector(".enquiry-form").addEventListener("submit", function(e) {
+    let isChecked = document.getElementById("humanCheck").checked;
+    let userAnswer = document.getElementById("mathAnswer").value;
+
+    if (!isChecked || userAnswer != correctAnswer) {
+      e.preventDefault();
+      document.getElementById("errorMsg").style.display = "block";
+    }
+  });
+</script>
 
 
 <script>
@@ -713,6 +591,9 @@ document.querySelectorAll(".scrollTopLogo").forEach(function(logo) {
     });
 });
 </script>
+
+
+
 
 
 </html>
