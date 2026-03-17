@@ -436,45 +436,45 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
       </ul>
     </div>
 
-    <form action="https://formspree.io/f/xdalodnq" method="POST" class="enquiry-form">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required>
+  <form id="enquiryForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
+method="POST"
+target="hidden_iframe"
+class="enquiry-form">
 
-      <select name="country" required>
-        <option value="">Select Country</option>
-        <option>United States</option>
-        <option>Canada</option>
-        <option>United Kingdom</option>
-        <option>Australia</option>
-        <option>India</option>
-        <option>Germany</option>
-        <option>UAE</option>
-        <option>Singapore</option>
-        <option>Other</option>
-      </select>
+<input type="text" name="entry.1795851255" placeholder="Full Name" required>
 
-      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+<input type="email" name="entry.1572640658" placeholder="Email Address" required>
 
-		   <div class="human-check">
-  <label>
-    <input type="checkbox" id="humanCheck">
-    I am not a robot
-  </label>
+<input type="tel" id="phone" name="entry.85357022" placeholder="Phone Number" required>
 
-  <div class="math-verify">
-    <span id="mathQuestion"></span>
-    <input type="number" id="mathAnswer" placeholder="Your Answer">
-  </div>
+<!-- WhatsApp (auto filled) -->
+<input type="tel" id="whatsapp" name="entry.1537635821" placeholder="WhatsApp Number" required>
 
-  <p id="errorMsg" style="color:red; display:none;">Please verify you are human.</p>
-</div>
+<!-- Course -->
+<input type="hidden" name="entry.896692678" value="AIML">
 
+<select name="entry.1768586726" required>
+  <option value="">Select Country</option>
+  <option value="USA">USA</option>
+  <option value="India">India</option>
+  <option value="UK">UK</option>
+</select>
 
-    <button type="submit">Submit Enquiry</button>
+<input type="text" name="entry.1968396756" placeholder="City">
 
-     
-    </form>
+<textarea name="entry.996980086" placeholder="Your Message"></textarea>
+
+<button type="submit">Submit Enquiry</button>
+
+</form>
+
+<!-- hidden iframe -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<p id="successMsg" style="display:none;color:lightgreen;font-size:18px;">
+✅ Thank you! We will contact you soon on WhatsApp.
+</p>
 
   </div>
 </section>
