@@ -436,38 +436,40 @@ Deep Learning is a subset of ML that uses neural networks with multiple layers t
       </ul>
     </div>
 
-  <form id="enquiryForm"
+<form id="enquiryForm"
 action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
 method="POST"
-target="_blank""
-class="enquiry-form">
+target="hidden_iframe">
 
 <input type="text" name="entry.1795851255" placeholder="Full Name" required>
 
-<input type="email" name="entry.1572640658" placeholder="Email Address" required>
+<input type="email" name="entry.1572640658" placeholder="Email" required>
 
-<input type="tel" id="phone" name="entry.85357022" placeholder="Phone Number" required>
+<input type="tel" id="phone" name="entry.85357022" placeholder="Phone" required>
 
-<!-- WhatsApp (auto filled) -->
-<input type="tel" id="whatsapp" name="entry.1537635821" placeholder="WhatsApp Number" required>
+<input type="tel" id="whatsapp" name="entry.1537635821" placeholder="WhatsApp" required>
 
-<!-- Course -->
-<input type="hidden" name="entry.896692678" value="AIML">
+<input type="text" name="entry.896692678" value="AIML" required>
 
 <select name="entry.1768586726" required>
-  <option value="">Select Country</option>
-  <option value="USA">USA</option>
-  <option value="India">India</option>
-  <option value="UK">UK</option>
+<option value="">Country</option>
+<option value="USA">USA</option>
+<option value="India">India</option>
 </select>
 
-<input type="text" name="entry.1968396756" placeholder="City">
+<input type="text" name="entry.1968396756" placeholder="City" required>
 
-<textarea name="entry.996980086" placeholder="Your Message"></textarea>
+<textarea name="entry.996980086" placeholder="Message"></textarea>
 
-<button type="submit">Submit Enquiry</button>
+<button type="submit">Submit</button>
 
 </form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<p id="successMsg" style="display:none;color:green;">
+✅ Submitted Successfully!
+</p>
 
 <!-- hidden iframe -->
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
