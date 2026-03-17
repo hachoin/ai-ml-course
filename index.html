@@ -507,22 +507,21 @@ let whatsapp = document.getElementById("whatsapp");
 
 let submitted = false;
 
-// auto copy phone → whatsapp
+// copy phone → whatsapp
 phone.addEventListener("input", function(){
   whatsapp.value = phone.value;
 });
 
-// detect submit
 form.addEventListener("submit", function(){
   submitted = true;
 });
 
-// show success message after real submit
+// success detect
 iframe.onload = function(){
   if(submitted){
-    document.getElementById("successMsg").style.display = "block";
+    document.getElementById("successMsg").style.display="block";
     form.reset();
-    submitted = false;
+    submitted=false;
   }
 };
 
