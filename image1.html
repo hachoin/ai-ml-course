@@ -49,6 +49,7 @@ button{
     border-radius:8px;
     font-size:16px;
     cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
@@ -60,6 +61,11 @@ button:hover{
     color:green;
     font-weight:600;
     margin-top:15px;
+}
+
+.whatsapp{
+    margin-top:10px;
+    font-size:14px;
 }
 </style>
 
@@ -96,7 +102,15 @@ button:hover{
 
 </form>
 
-<div id="success">✅ Thank you! We received your details.</div>
+<div id="success">
+    ✅ Thank you! We received your details.<br>
+    📲 Our team will contact you on WhatsApp shortly.
+</div>
+
+<div class="whatsapp">
+    Or message us directly: <br>
+    <a href="https://wa.me/917324852499" target="_blank">Chat on WhatsApp</a>
+</div>
 
 </div>
 
@@ -104,19 +118,17 @@ button:hover{
 document.getElementById("leadForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    const formData = new FormData(this);
+    const form = this;
+    const formData = new FormData(form);
 
     fetch("https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse", {
         method: "POST",
         mode: "no-cors",
         body: formData
+    }).then(() => {
+        document.getElementById("success").style.display = "block";
+        form.reset();
     });
-
-    // Show success message
-    document.getElementById("success").style.display = "block";
-
-    // Reset form
-    this.reset();
 });
 </script>
 
