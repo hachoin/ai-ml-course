@@ -62,7 +62,6 @@ button:hover{
     margin-top:15px;
 }
 </style>
-
 </head>
 
 <body>
@@ -83,7 +82,7 @@ button:hover{
 
 <select name="entry.896692678" required>
     <option value="">Select Course</option>
-    <option value="aiml">AI / ML</option>
+    <option value="ai ml">AI / ML</option>
 </select>
 
 <input name="entry.1768586726" placeholder="Country" required>
@@ -107,7 +106,8 @@ button:hover{
 document.getElementById("leadForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    const formData = new FormData(this);
+    const form = this;
+    const formData = new FormData(form);
 
     fetch("https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse", {
         method: "POST",
@@ -115,8 +115,9 @@ document.getElementById("leadForm").addEventListener("submit", function(e){
         body: formData
     });
 
+    // UX improvements
     document.getElementById("success").style.display = "block";
-    this.reset();
+    form.reset();
 });
 </script>
 
