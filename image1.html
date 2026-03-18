@@ -10,7 +10,7 @@
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    background:linear-gradient(135deg,#1f4037,#99f2c8);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -18,27 +18,37 @@ body{
 }
 
 .container{
-    background:#ffffff;
+    background:#fff;
     padding:30px;
     width:380px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
     text-align:center;
+    animation:fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 h2{
     margin-bottom:20px;
-    color:#333;
+    color:#222;
 }
 
 input, select{
     width:100%;
     padding:12px;
     margin:10px 0;
-    border-radius:8px;
+    border-radius:10px;
     border:1px solid #ccc;
-    outline:none;
     font-size:14px;
+}
+
+input:focus, select:focus{
+    border-color:#0073b1;
+    outline:none;
 }
 
 button{
@@ -47,7 +57,7 @@ button{
     background:#0073b1;
     color:#fff;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     font-size:16px;
     cursor:pointer;
     transition:0.3s;
@@ -59,9 +69,10 @@ button:hover{
 
 #thankyou{
     display:none;
-    font-size:18px;
-    color:green;
+    font-size:20px;
+    color:#28a745;
     font-weight:600;
+    margin-top:20px;
 }
 </style>
 
@@ -71,13 +82,17 @@ button:hover{
 
 <div class="container">
 
-<h2>Register Now</h2>
+<h2>🚀 Register Now</h2>
 
-<form id="myForm" action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+<form id="myForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLSduEfnKqVDVXwpuh9lvfQGkL934JBJlM6GziXnT6NNqYzDYQA/formResponse"
+method="POST"
+target="hidden_iframe"
+onsubmit="submitted=true;">
 
 <input type="text" name="entry.1795851255" placeholder="Full Name" required>
 
-<input type="email" name="entry.1572640658" placeholder="Email" required>
+<input type="email" name="entry.1572640658" placeholder="Email Address" required>
 
 <input type="tel" name="entry.85357022" placeholder="Phone Number" required>
 
@@ -85,21 +100,22 @@ button:hover{
 
 <select name="entry.896692678" required>
     <option value="">Select Course</option>
-    <option value="aiml">AI/ML</option>
+    <option value="aiml">AI / ML</option>
 </select>
 
-<input type="text" name="entry.1768586726" placeholder="Country" required>
+<input type="text" name="entry.1768586726" placeholder="Country (e.g. USA)" required>
 
-<input type="text" name="entry.1968396756" placeholder="City" required>
+<input type="text" name="entry.1968396756" placeholder="City (e.g. Los Angeles)" required>
 
 <input type="text" name="entry.996980086" placeholder="How did you hear about us?" required>
 
-<button type="submit">Submit</button>
+<button type="submit">Submit Registration</button>
 
 </form>
 
 <div id="thankyou">✅ Thank you! Your response has been submitted.</div>
 
+<!-- Hidden iframe -->
 <iframe name="hidden_iframe" style="display:none;" onload="if(submitted){showThankYou();}"></iframe>
 
 </div>
